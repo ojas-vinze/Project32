@@ -38,10 +38,10 @@ function setup() {
 function draw() {
   time();
   if(hour>=06 && hour<=18){
-    background("white");
+    background("lightgrey");
   }
   else{
-    background("lightgrey");
+    background("black");
   }
   ground.display();
   ground2.display();
