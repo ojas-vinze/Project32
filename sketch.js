@@ -6,13 +6,15 @@ const Constraint = Matter.Constraint;
 
 var score=0;
 
+var hour
 function setup() {
   createCanvas(800,400);
 
   engine = Engine.create();
 	world = engine.world;
   
-  
+  time();
+
   ground = new Ground(390,300,180,20);
   ground2 = new Ground(width/2,height,width,20);
   
@@ -36,7 +38,7 @@ function setup() {
 }
 
 function draw() {
-  time();
+  
   if(hour>=06 && hour<=18){
     background("lightgrey");
   }
@@ -93,5 +95,5 @@ async function time(){
   var response = await fetch("https://worldtimeapi.org/api/timezone/Asia/Kolkata");
   responseJSON = await response.json();
   var dt = responseJSON.datetime;
-  var hour = dt.slice(11,13);
+  hour = dt.slice(11,13);
 }
